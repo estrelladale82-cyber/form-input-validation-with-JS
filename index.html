@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <!--Link to external Javascrip file-->
+    <script src="script.js" defer></script>
+
+</head>
+<style>
+
+    /*styling for the body*/
+
+    body {
+
+        min-height: 100vh;
+        background: radial-gradient(circle at 7.5% 24%, rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%);
+        ;
+        background-size: cover;
+        background-position: right;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 18px;
+
+    }
+
+/*styling for the container*/
+
+    .container {
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
+        background-color: whitesmoke;
+        width: 40% 600px;
+        border-radius: 20px 20px;
+
+
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-bottom: 40px;
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /*styling for the form labels*/
+
+    form label {
+        flex-shrink: 0;
+        height: 50px;
+        width: 50px;
+    }
+
+    span {
+    color:red;
+    font-size: 12px;
+   display: block;
+    min-height: 18px;
+    margin-left: 20px;
+}
+
+    button {
+        padding: 10px;
+        margin: 15px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        text-align: center;
+        
+
+    }
+
+    form input {
+        box-sizing: border-box;
+        height: 40px;
+        border-radius: 10px;
+        font: inherit;
+        flex-grow: 1;
+        background-color: aliceblue;
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <!--wrap the content of the form in a div container-->
+    <div class="container">
+        <h1>
+            User Registration Form
+        </h1>
+        <form id="registration-form">
+            <div>
+                <label for="fullname-input"> <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                        <path
+                            d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z" />
+                    </svg></label>
+                    <!--apparantly the SVG format makes styling from CSS easier-->
+                <input type="text" name="fullname" id="fullname-input" placeholder="Full Name">
+                <span id="fullName-error"></span> 
+            </div>
+
+            <div>
+                <label for="email-address-input"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                        <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                    </svg></label>
+                <input type="email" name="emailaddress" id="email-address-input" placeholder="Email Address">
+                 <span id="email-error"></span>
+            </div>
+
+            <div>
+                <label for="age-input"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#1f1f1f">
+                        <path
+                            d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z" />
+                    </svg></label>
+                <input type="number" name="age" id="age-input" placeholder="Age">
+                 <span id="age-error"></span>
+            </div>
+            <div>
+                <label for="password-input"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                        <path
+                            d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm296.5-143.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+                    </svg></label>
+                <input type="password" name="password" id="password-input" placeholder="Password">
+                <span id="password-error"></span> 
+            </div>
+
+            <div>
+                <label for="confirm-password-input"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                        <path
+                            d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm296.5-143.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+                    </svg></label>
+                    <input type="password" name="confirm-password" id="confirm-password-input"
+                    placeholder="Confirm Password">
+                    <span id="confirmPassword-error"></span> 
+            </div>
+            <button type="submit">Signup</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
